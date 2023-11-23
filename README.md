@@ -34,7 +34,7 @@ Here's a part of animation that demonstrates the relation between point in $F(k_
 
 
 <p align ="center">
-<img src="./FT_2D.gif" height="600" >
+<img src="./FT_2D.gif" height="500" >
  <figcaption>Fig 2: 2D Sinosoid with changing phase  </figcaption>
 </p>
 
