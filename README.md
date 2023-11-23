@@ -44,5 +44,39 @@ If you keep on increasing the cycles in either direction  $k_x$ or $k_y$ [ V , U
 **Hint:** 
 * It has to do with the number of point i am sampling to create the 2D sinosoid and nyquist frequency:D
 
+
+
+
+As a proof of concept, let's consider a Mario sprite image. We start by taking its Fourier transform, represented as:
+
+$$F(k_x, k_y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y) e^{-2\pi i(k_x x + k_y y)} \, dx \, dy$$
+
+Here, $f(x, y)$ is our original Mario sprite image, and $F(k_x, k_y)$ is its Fourier transform, with $k_x$ and $k_y$ representing spatial frequencies in the x and y directions, respectively.
+
+To reconstruct the original image from its Fourier transform, we take each point in the $F(k_x, k_y)$ plane, which is a complex number (phasor). The reconstruction process involves the following steps:
+
+
+1. **Constructing 2D Sinusoids:** For each point $(k_x, k_y)$ in the Fourier transform, we create a corresponding 2D sinusoid in its complex exponential form:
+
+   $$S(x, y; k_x, k_y) = e^{2\pi i(k_x x + k_y y)}$$
+
+2. **Scaling with the Phasor:** The phasor at each point in the $F(k_x, k_y)$ plane, characterized by an amplitude $A$ and phase $\phi$, scales the corresponding 2D sinusoid. This scaling is represented as:
+
+   $$S_{scaled}(x, y; k_x, k_y) = A \cdot e^{2\pi i(k_x x + k_y y) + \phi}$$
+
+3. **Summing Spatial Frequencies:** The final step involves summing these scaled and shifted sinusoids across all spatial frequencies to reconstruct the original image:
+
+   $$f_{reconstructed}(x, y) = \sum_{k_x, k_y} S_{scaled}(x, y; k_x, k_y)$$
+
+This method demonstrates the practical application of Fourier Transform in image processing, showcasing how an image can be decomposed and then reconstructed using the principles of spatial frequencies and phase shifts.
+
+<p align ="center">
+<img src="./mario_recons.gif" height="600" >
+ <figcaption>Fig 3: 1: oringal image, 2: 2D FT of the image, 3: Indexing phasors, 4: 2D sine wave associated with each phasor. Addtion of the 2D Sinosoids  </figcaption>
+</p>
+
+
+In Fig.3 as we keep adding the 2D sinosoids we get the final image. This is the essence of the Fourier Transform: decomposing a signal into its 2D sine patterns and then reconstructing it from these components.
+
 # References
 1. [The Fourier Theory in MRI ](https://youtu.be/R_4GuyJTzMo?t=350)
