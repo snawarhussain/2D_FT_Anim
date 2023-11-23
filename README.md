@@ -4,7 +4,7 @@ The 2D Fourier Transform extends the principles of the 1D transform to two dimen
 
 $$F(k_x, k_y) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x, y) e^{-2\pi i(k_xx + k_yy)} \, dx \, dy$$
 
-Here, $f(x, y)$ is the spatial signal (image), while $$k_x$$ and $$k_y$$ represent spatial frequencies in the x and y directions, respectively. This transform decomposes an image into its frequency components, revealing how different spatial frequencies and orientations contribute to the overall image.
+Here, $f(x, y)$ is the spatial signal (image), while $k_x$ and $k_y$ represent spatial frequencies in the x and y directions, respectively. This transform decomposes an image into its frequency components, revealing how different spatial frequencies and orientations contribute to the overall image.
 
 now $F(k_x, k_y)$, unlike $F(\omega)$ in 1D fourier transform,  is a 2D plane where these spatial frequencies are organized thus, each point in this plane maps to a specific spatial frequency within the object. This concept parallels the 1D Fourier transform, but extends it to a 2D framework. Here, we deal with 2D spatial coordinates (x, y) and corresponding 2D spatial frequency coordinates $(k_x, k_y )$ and each point in this plane, just like in $F(\omega)$, has its own complex plane containing withinin a phasor that scales and shifts this 2D sinosoid. This spatial frequency information is critical in reconstructing the final MRI image.
 
